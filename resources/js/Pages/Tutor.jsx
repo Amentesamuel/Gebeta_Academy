@@ -3,7 +3,8 @@ import Banner from '@/Layouts/Banner'
 import Mainlayout from '@/Layouts/Mainlayout'
 import React from 'react'
 
-const Tutor = () => {
+const Tutor = ({tutors}) => {
+  
   return (
     <Mainlayout>
         <Banner>
@@ -11,7 +12,7 @@ const Tutor = () => {
                     Our Tutors
                 </div>
         </Banner>
-      <TutorsList/>
+      <TutorsList tutors={tutors}/>
     </Mainlayout>
   )
 }

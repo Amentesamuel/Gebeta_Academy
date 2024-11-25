@@ -34,8 +34,8 @@ const Banner = () => {
             </div>
 
             <div className='flex items-center gap-4 w-full'>
-                <Link href={'tutor'} className='bg-button text-white hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  items-center justify-center flex gap-2 text-xs  md:text-sm px-8 md:px-4 py-1 md:py-2 rounded-2xl'>Find best Tutor <BiLogIn className='text-sm md:block hidden'/></Link>
-                <button className='border border-button hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  text-black items-center justify-center  text-xs flex md:text-sm px-8 md:px-5 hover:bg-button hover:text-white py-1 md:py-2 rounded-2xl'>Apply as Tutor <BiLogIn className='text-sm md:block hidden'/></button>
+                <Link href={'tutor'} className='bg-button text-white hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  items-center text-center justify-center flex gap-2 text-xs  md:text-sm px-8 md:px-4 py-1 md:py-2 rounded-2xl'>Find best Tutor <BiLogIn className='text-sm md:block hidden'/></Link>
+                <Link href={'/Tutordashboard/apply'} className='border border-button hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  text-black items-center justify-center text-center  text-xs flex md:text-sm px-8 md:px-5 hover:bg-button hover:text-white py-1 md:py-2 rounded-2xl'>Apply as Tutor <BiLogIn className='text-sm md:block hidden'/></Link>
             </div>
             </div>
 

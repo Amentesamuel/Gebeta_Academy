@@ -9,6 +9,7 @@ import menTutor from './men-tutor.png'
 import femaleTutor from './female-tutor.png'
 import whyUs from './whyUs.png'
 import book1 from './book.jpg'
+import parents from './parents.jpg'
 
 
-export { shapeOne, shapeTwo, shapeThree ,shapeFive, Tutor, TutorBanner1, menTutor, femaleTutor, whyUs, book1}
+export { shapeOne, shapeTwo, shapeThree ,shapeFive, Tutor, TutorBanner1, menTutor, femaleTutor, whyUs, book1, parents}

@@ -37,8 +37,9 @@ const Footer = () => {
                 <Link href="/" className='hover:text-button transition-all duration-300'>Home</Link>
                 <Link href="about" className='hover:text-button transition-all duration-300'>About</Link>
                 <Link href="tutor" className='hover:text-button transition-all duration-300'>Tutors</Link>
-                <Link href="/" className='hover:text-button transition-all duration-300'>Resources</Link>
-                <Link href="/" className='hover:text-button transition-all duration-300'>Blog</Link>
+                <Link href="resource" className='hover:text-button transition-all duration-300'>Resources</Link>
+                
+                <Link href="contact" className='hover:text-button transition-all duration-300'>Contact</Link>
             </div>
 
             <div className='flex flex-col col-span-2   lg:col-span-1  gap-2 lg:pt-8'>

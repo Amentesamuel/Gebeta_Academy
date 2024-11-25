@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('tutors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('user_id')->constrained();
             $table->string('gender');
             $table->string('phone');
-            $table->string('email');
             $table->string('address');
             $table->string('education');
             $table->string('subject');
@@ -28,8 +27,10 @@ return new class extends Migration
             $table->boolean('status')->default(false);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.

@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -32,6 +33,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function tutor(){
+        return $this->hasOne(Tutor::class,'user_id','id');
+    }
 
     /**
      * Get the attributes that should be cast.

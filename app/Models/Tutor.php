@@ -8,10 +8,9 @@ class Tutor extends Model
 {
     //
     protected $fillable=[
-        'name',
+        'user_id',
         'gender',
         'phone',
-        'email',
         'address',
         'education',
         'subject',
@@ -21,5 +20,15 @@ class Tutor extends Model
         'image',
         'description',
         'status'
+    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class,);
+    }
+
+  
+    protected $casts = [
+        'available_days' => 'array',
+        
     ];
 }

@@ -7,10 +7,11 @@ import React, { useState } from "react";
 import { LuGraduationCap } from "react-icons/lu";
 import { FaFilter } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { FaArrowRightLong, FaLocationDot, FaStar } from "react-icons/fa6";
+import { FaArrowRightLong, FaLocationDot, FaPenNib, FaStar } from "react-icons/fa6";
+import { Link } from "@inertiajs/react";
 
 
-const ResourceList = () => {
+const ResourceList = ({resources}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openfilter, setOpenFilter] = useState(false);
 
@@ -23,7 +24,7 @@ const ResourceList = () => {
     return (
         <div className="w-full bg-background2">
             <div className="container mx-auto md:px-20 md:py-10 py-5 px-2 flex flex-col md:flex-row gap-10">
-                <div className="w-[20rem] h-fit  bg-background hidden md:flex flex-row md:flex-col gap-5 md:p-5 rounded-xl">
+                <div className="w-64 h-fit  bg-background hidden md:flex flex-row md:flex-col gap-5 md:p-5 rounded-xl">
                     <div>
                         <h1 className="text-sm font-poppins">Filter Tutors</h1>
                     </div>
@@ -431,11 +432,9 @@ const ResourceList = () => {
                         </>
                     )}
                 </div>
-                <div className="   flex flex-col gap-5  rounded-xl">
+                <div className="  flex-1 flex flex-col gap-5  rounded-xl">
                     <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-500">
-                            showing 1-10 of 100 results
-                        </div>
+                        
                         {/* <div className="flex relative items-center gap-2">
                             <div className="text-sm text-gray-500">sort by</div>
                             <button onClick={toggleOpen} className="rounded-full cursor-pointer flex items-center justify-center bg-gray-200 px-5 py-1">
@@ -465,21 +464,27 @@ const ResourceList = () => {
                             )}
                         </div> */}
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-                        <div className=" gap-3 flex pb-5 h-fit flex-col items-start justify-start bg-background rounded-xl shadow-md">
+                    
+
+
+
+                    <div  className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                    {resources.data.map((resource,i)=>(
+                        <Link href={`/resource/${resource.id}`} className="cursor-pointer" >
+                        <div key={i} className=" gap-3 flex pb-5 h-fit flex-col items-start justify-start bg-background rounded-xl shadow-md">
                             <img
-                                src={book1}
+                                src={"http://localhost:8000/storage/"+resource.book_cover}
                                 alt="tutor"
                                 className="rounded-xl h-52 w-full  p-1 mt-0 object-cover "
                             />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
+                            <h1 className="text-sm font-poppins overflow-hidden break-words  px-5 ">
+                                {resource.title}
                             </h1>
                             <div className="flex   items-center w-full justify-between px-4 md:gap-16">
                                 <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
+                                    <FaPenNib className="text-button" />
                                     <p className="text-xs">
-                                        Mekelle University
+                                        {resource.author}
                                     </p>
                                 </div>
                                 <div className="flex items-center justify-center gap-1">
@@ -487,114 +492,24 @@ const ResourceList = () => {
                                     <p className="text-xs  text-button">4.5</p>
                                 </div>
                             </div>
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
-                                </div>
-                            </div>
+                            
 
                             <hr className="w-full border-b-1 border-button border-dashed" />
 
                             <div className="flex items-center justify-between w-full px-4 py-2">
                                 <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
+                                    View detail
                                     <FaArrowRightLong className="text-button" />
                                 </button>
                             </div>
                         </div>
 
-                        <div className=" gap-3 flex pb-5 h-fit flex-col items-start justify-start bg-background rounded-xl shadow-md">
-                            <img
-                                src={book1}
-                                alt="tutor"
-                                className="rounded-xl h-52 w-full  p-1 mt-0 object-cover "
-                            />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
-                            </h1>
-                            <div className="flex   items-center w-full justify-between px-4 md:gap-16">
-                                <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
-                                    <p className="text-xs">
-                                        Mekelle University
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <FaStar className="text-yellow-500" />
-                                    <p className="text-xs  text-button">4.5</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
-                                </div>
-                            </div>
+                        
+                    
+                        </Link>
+                        
 
-                            <hr className="w-full border-b-1 border-button border-dashed" />
-
-                            <div className="flex items-center justify-between w-full px-4 py-2">
-                                <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
-                                    <FaArrowRightLong className="text-button" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className=" gap-3 flex pb-5 h-fit flex-col items-start justify-start bg-background rounded-xl shadow-md">
-                            <img
-                                src={book1}
-                                alt="tutor"
-                                className="rounded-xl h-52 w-full  p-1 mt-0 object-cover "
-                            />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
-                            </h1>
-                            <div className="flex   items-center w-full justify-between px-4 md:gap-16">
-                                <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
-                                    <p className="text-xs">
-                                        Mekelle University
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <FaStar className="text-yellow-500" />
-                                    <p className="text-xs  text-button">4.5</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
-                                </div>
-                            </div>
-
-                            <hr className="w-full border-b-1 border-button border-dashed" />
-
-                            <div className="flex items-center justify-between w-full px-4 py-2">
-                                <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
-                                    <FaArrowRightLong className="text-button" />
-                                </button>
-                            </div>
-                        </div>
+                    ))}
                     </div>
                 </div>
             </div>

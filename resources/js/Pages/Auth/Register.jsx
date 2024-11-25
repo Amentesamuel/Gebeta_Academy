@@ -13,6 +13,7 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        role: '',
     });
 
     const submit = (e) => {
@@ -30,10 +31,12 @@ export default function Register() {
             </Banner>
        
 
-            <div className="py-20 px-6 flex items-center justify-center">
+            <div className=" flex items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-md w-full space-y-8 bg-white dark:bg-foreground p-10 rounded-2xl shadow-2xl">
+
             <Head title="Register" />
                     <form onSubmit={submit}>
-                        <div className="py-10  px-10  rounded-md shadow-2xl bg-foreground">
+                        <div className="">
                             <h1 className="text-2xl text-black ">
                                 Let's Get You Started!
                             </h1>
@@ -56,6 +59,7 @@ export default function Register() {
                                     onChange={(e) => setData('name', e.target.value)}
                                     className="w-full px-4 py-2 border border-gray-200 text-sm shadow-sm text-black bg-white rounded-lg "
                                 />
+                                {errors.fullName && <span className="text-red-500 text-sm">{errors.fullName}</span>}
                             </div>
                             
                             <div className="flex flex-col gap-2 pt-5">
@@ -73,6 +77,7 @@ export default function Register() {
                                     onChange={(e) => setData('email', e.target.value)}
                                     className="w-full px-4 py-2 border border-gray-200 text-sm shadow-sm text-black bg-white rounded-lg "
                                 />
+                                {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
                             </div>
                             <div className="flex flex-col gap-2 pt-5">
                                 <label
@@ -89,6 +94,7 @@ export default function Register() {
                                     onChange={(e) => setData('password', e.target.value)}
                                     className="w-full px-4 py-2 border border-gray-200 shadow-sm text-sm  text-black bg-white rounded-lg "
                                 />
+                                {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
                             </div>
                             <div className="flex flex-col gap-2 pt-5">
                                 <label
@@ -105,6 +111,21 @@ export default function Register() {
                                     onChange={(e) => setData('password_confirmation', e.target.value)}
                                     className="w-full px-4 py-2 border border-gray-200 shadow-sm text-sm  text-black bg-white rounded-lg "
                                 />
+                                {errors.password_confirmation && <span className="text-red-500 text-sm">{errors.password_confirmation}</span>}
+                            </div>
+
+                            <div className="flex flex-col gap-2 pt-5">
+                                <label
+                                    htmlFor="role"
+                                    className="block text-gray-700 text-sm mb-1"
+                                >
+                                    Select Your Role
+                                </label>
+                                <select id="role" name="role" value={data.role} onChange={(e) => setData('role', e.target.value)} className="w-full px-4 py-2 border border-gray-200 shadow-sm text-sm  text-black bg-white rounded-lg ">
+                                    <option value="">Select Your Role</option>
+                                    <option value="tutor">Tutor</option>
+                                    <option value="student">Student</option>
+                                </select>
                             </div>
 
                             
@@ -130,6 +151,7 @@ export default function Register() {
                         <img src={loginImage} alt="login" className="w-52 h-52 object-contain" />
                     </div> */}
                     </form>
+                </div>
                 </div>
         
         </Mainlayout>

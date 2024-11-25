@@ -69,6 +69,7 @@ export default function Login({ status, canResetPassword }) {
                                     placeholder="name@example.com"
                                 />
                             </div>
+                            {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -98,6 +99,7 @@ export default function Login({ status, canResetPassword }) {
                                             </svg>
                                         )}
                                     </button>
+                                    {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
                                 </div>
                             </div>
                         </div>

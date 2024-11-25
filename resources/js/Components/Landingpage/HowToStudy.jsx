@@ -17,6 +17,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { LuContact, LuSearch, LuUsers } from "react-icons/lu";
 import { BsBook } from "react-icons/bs";
 import { TbUsersGroup } from "react-icons/tb";
+import { Link } from "@inertiajs/react";
 
 const HowToStudy = () => {
     return (
@@ -110,13 +111,13 @@ const HowToStudy = () => {
                     </div>
 
                     <div className="flex items-center gap-4 pt-5">
-                        <button className="bg-button hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  text-white items-center justify-center flex gap-2 text-sm px-5 py-2 rounded-2xl">
+                        <Link href={'register'} className="bg-button hover:bg-button/80 hover:scale-105 transition-all duration-300 ease-in-out  text-white items-center justify-center flex gap-2 text-sm px-5 py-2 rounded-2xl">
                             <FaArrowRightLong
                                 className="text-sm"
                                 style={{ transform: "rotate(325deg)" }}
                             />{" "}
                             Register
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

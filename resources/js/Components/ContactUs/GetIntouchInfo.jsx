@@ -37,7 +37,7 @@ const GetIntouchInfo = () => {
                         </div>
 
                     </div>
-                    <div className='bg-button items-center h-40 justify-center shadow-xl  rounded-lg p-10 flex gap-4'>
+                    <div className='bg-button items-center h-40 justify-start p-10 shadow-xl  rounded-lg  flex gap-4'>
                         <div className='bg-white rounded-full p-2'>
 
                         <IoMailOpenOutline className='text-2xl text-black ' style={{fontSize: '1.5rem'}}/>
@@ -54,7 +54,7 @@ const GetIntouchInfo = () => {
                         </div>
 
                     </div>
-                    <div className='bg-gray-200 items-center h-40 justify-center  shadow-xl rounded-lg p-10 flex gap-4'>
+                    <div className='bg-gray-200 items-center h-40 justify-start  shadow-xl rounded-lg p-10 flex gap-4'>
                         <div className='bg-button rounded-full p-2'>
 
                         <BiPhone className='text-2xl text-white ' style={{fontSize: '1.5rem'}}/>

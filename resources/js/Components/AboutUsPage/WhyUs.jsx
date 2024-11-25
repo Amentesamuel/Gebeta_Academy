@@ -85,7 +85,7 @@ const WhyUs = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
   )
 }
 

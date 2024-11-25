@@ -6,8 +6,9 @@ import { FaArrowRightLong, FaLocationDot, FaStar } from "react-icons/fa6";
 import { LuGraduationCap } from "react-icons/lu";
 import { FaFilter } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { Link } from "@inertiajs/react";
 
-const TutorsList = () => {
+const TutorsList = ({ tutors }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openfilter, setOpenFilter] = useState(false);
 
@@ -20,7 +21,7 @@ const TutorsList = () => {
     return (
         <div className="w-full bg-background2">
             <div className="container mx-auto md:px-20 md:py-10 py-5 px-2 flex flex-col md:flex-row gap-10">
-                <div className="w-[40rem] h-fit  bg-background hidden md:flex flex-row md:flex-col gap-5 md:p-5 rounded-xl">
+                <div className=" h-fit w-64 bg-background hidden md:flex flex-row md:flex-col gap-5 md:p-5 rounded-xl">
                     <div>
                         <h1 className="text-sm font-poppins">Filter Tutors</h1>
                     </div>
@@ -283,127 +284,125 @@ const TutorsList = () => {
                                                 Star Rating
                                             </h1>
                                             <div className="flex gap-6">
-                                            <div className="flex flex-col items-start gap-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="star5"
-                                                    id="star5"
-                                                    className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
-                                                />
-                                                <label
-                                                    htmlFor="star5"
-                                                    className="text-xs flex items-center justify-center gap-1"
-                                                >
-                                                    <p className="text-xs">
-                                                        5
-                                                    </p>
-                                                    <FaStar
-                                                        className="text-yellow-500"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
+                                                <div className="flex flex-col items-start gap-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="star5"
+                                                        id="star5"
+                                                        className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
                                                     />
-                                                    
-                                                </label>
-                                            </div>
-                                            <div className="flex flex-col items-start gap-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="star4"
-                                                    id="star4"
-                                                    className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
-                                                />
-                                                <label
-                                                    htmlFor="star4"
-                                                    className="text-xs flex items-center justify-center gap-1"
-                                                >
-                                                    <p className="text-xs">
-                                                        4
-                                                    </p>
-                                                    <FaStar
-                                                        className="text-yellow-500"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
-                                                    />
-                                                    
-                                                </label>
-                                            </div>
-                                            <div className="flex flex-col items-start gap-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="star3"
-                                                    id="star3"
-                                                    className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
-                                                />
-                                                <label
-                                                    htmlFor="star3"
-                                                    className="text-xs flex items-center justify-center gap-1"
-                                                >
-                                                    <p className="text-xs">
-                                                        3
-                                                    </p>
-                                                    <FaStar
-                                                        className="text-yellow-500"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
-                                                    />
-                                                    
-                                                </label>
-                                            </div>
-                                            <div className="flex flex-col items-start gap-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="star2"
-                                                    id="star2"
-                                                    className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
-                                                />
-                                                <label
-                                                    htmlFor="star2"
-                                                    className="text-xs flex items-center justify-center gap-1"
-                                                >
+                                                    <label
+                                                        htmlFor="star5"
+                                                        className="text-xs flex items-center justify-center gap-1"
+                                                    >
                                                         <p className="text-xs">
-                                                                2 
+                                                            5
                                                         </p>
-                                                    <FaStar
-                                                        className="text-yellow-500"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
+                                                        <FaStar
+                                                            className="text-yellow-500"
+                                                            style={{
+                                                                fontSize:
+                                                                    "14px",
+                                                            }}
+                                                        />
+                                                    </label>
+                                                </div>
+                                                <div className="flex flex-col items-start gap-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="star4"
+                                                        id="star4"
+                                                        className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
                                                     />
-                                                </label>
-                                            </div>
-                                            <div className="flex flex-col items-start gap-2">
-                                                <input
-                                                    type="checkbox"
-                                                    name="star1"
-                                                    id="star1"
-                                                    className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
-                                                />
-                                                <label
-                                                    htmlFor="star1"
-                                                    className="text-xs flex items-center justify-center gap-1"
-                                                >
-                                                    <p className="text-xs">
-                                                        1
-                                                    </p>
-                                                    <FaStar
-                                                        className="text-yellow-500"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
+                                                    <label
+                                                        htmlFor="star4"
+                                                        className="text-xs flex items-center justify-center gap-1"
+                                                    >
+                                                        <p className="text-xs">
+                                                            4
+                                                        </p>
+                                                        <FaStar
+                                                            className="text-yellow-500"
+                                                            style={{
+                                                                fontSize:
+                                                                    "14px",
+                                                            }}
+                                                        />
+                                                    </label>
+                                                </div>
+                                                <div className="flex flex-col items-start gap-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="star3"
+                                                        id="star3"
+                                                        className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
                                                     />
-                                                    
-                                                </label>
-                                            </div>
+                                                    <label
+                                                        htmlFor="star3"
+                                                        className="text-xs flex items-center justify-center gap-1"
+                                                    >
+                                                        <p className="text-xs">
+                                                            3
+                                                        </p>
+                                                        <FaStar
+                                                            className="text-yellow-500"
+                                                            style={{
+                                                                fontSize:
+                                                                    "14px",
+                                                            }}
+                                                        />
+                                                    </label>
+                                                </div>
+                                                <div className="flex flex-col items-start gap-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="star2"
+                                                        id="star2"
+                                                        className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
+                                                    />
+                                                    <label
+                                                        htmlFor="star2"
+                                                        className="text-xs flex items-center justify-center gap-1"
+                                                    >
+                                                        <p className="text-xs">
+                                                            2
+                                                        </p>
+                                                        <FaStar
+                                                            className="text-yellow-500"
+                                                            style={{
+                                                                fontSize:
+                                                                    "14px",
+                                                            }}
+                                                        />
+                                                    </label>
+                                                </div>
+                                                <div className="flex flex-col items-start gap-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="star1"
+                                                        id="star1"
+                                                        className="text-button w-4 h-4 appearance-none focus:outline-none focus:ring-0 checked:bg-blue-500 cursor-pointer"
+                                                    />
+                                                    <label
+                                                        htmlFor="star1"
+                                                        className="text-xs flex items-center justify-center gap-1"
+                                                    >
+                                                        <p className="text-xs">
+                                                            1
+                                                        </p>
+                                                        <FaStar
+                                                            className="text-yellow-500"
+                                                            style={{
+                                                                fontSize:
+                                                                    "14px",
+                                                            }}
+                                                        />
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        
                                     </div>
 
-                                    
                                     <div className="mt-6 flex justify-end">
                                         <button
                                             onClick={toggleOpenFilter}
@@ -417,11 +416,9 @@ const TutorsList = () => {
                         </>
                     )}
                 </div>
-                <div className="   flex flex-col gap-5  rounded-xl">
+                <div className=" flex-1  flex flex-col gap-5  rounded-xl">
                     <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-500">
-                            showing 1-10 of 100 results
-                        </div>
+                       
                         {/* <div className="flex relative items-center gap-2">
                             <div className="text-sm text-gray-500">sort by</div>
                             <button onClick={toggleOpen} className="rounded-full cursor-pointer flex items-center justify-center bg-gray-200 px-5 py-1">
@@ -452,135 +449,68 @@ const TutorsList = () => {
                         </div> */}
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-                        <div className=" gap-3 flex pb-5 flex-col items-start justify-start bg-background rounded-xl shadow-md">
-                            <img
-                                src={Tutor}
-                                alt="tutor"
-                                className="rounded-xl p-1 mt-0 object-cover "
-                            />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
-                            </h1>
-                            <div className="flex   items-center w-full justify-between px-4 md:gap-16">
-                                <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
-                                    <p className="text-xs">
-                                        Mekelle University
+                        {tutors.map((tutor, i) => (
+                            <Link href={`/tutor/${tutor.id}`}>
+                                <div
+                                key={i}
+                                className=" gap-3 flex pb-5 flex-col   items-start justify-start bg-background rounded-xl shadow-md"
+                            >
+                                <img
+                                    src={
+                                        "http://localhost:8000/storage/" +
+                                        tutor.image
+                                    }
+                                    alt="tutor"
+                                    className="rounded-xl p-1 mt-0 object-cover w-full h-48"
+                                />
+                                <h1 className="text-lg font-poppins  px-5 ">
+                                    {tutor.name}
+                                </h1>
+                                <div className="flex   items-center w-full justify-between px-4 md:gap-16">
+                                    <div className="flex items-center justify-center gap-2">
+                                        <LuGraduationCap className="text-button" />
+                                        <p className="text-xs">
+                                            {tutor.education}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center justify-center gap-1">
+                                        {/* <FaStar className="text-yellow-500" /> */}
+                                        <p className="text-xs  text-button">
+                                            {tutor.experience} experience
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex ml-5 items-center justify-center gap-1">
+                                    {/* <FaStar className="text-yellow-500" /> */}
+                                    <p className="text-xs  text-button">
+                                        {tutor.subject}
                                     </p>
                                 </div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <FaStar className="text-yellow-500" />
-                                    <p className="text-xs  text-button">4.5</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
-                                </div>
-                            </div>
 
-                            <hr className="w-full border-b-1 border-button border-dashed" />
-
-                            <div className="flex items-center justify-between w-full px-4 py-2">
-                                <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
-                                    <FaArrowRightLong className="text-button" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className=" gap-3 flex pb-5 flex-col items-start justify-start bg-background rounded-xl shadow-md">
-                            <img
-                                src={Tutor}
-                                alt="tutor"
-                                className="rounded-xl p-1 mt-0 object-cover "
-                            />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
-                            </h1>
-                            <div className="flex   items-center w-full justify-between px-4 md:gap-16">
-                                <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
-                                    <p className="text-xs">
-                                        Mekelle University
-                                    </p>
+                                <div className="flex items-center justify-end w-full gap-2 px-4">
+                                    <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
+                                        <FaLocationDot
+                                            className="text-button"
+                                            style={{ fontSize: "12px" }}
+                                        />
+                                        <p className="text-xs text-gray-500">
+                                            {tutor.address}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <FaStar className="text-yellow-500" />
-                                    <p className="text-xs  text-button">4.5</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
+
+                                <hr className="w-full border-b-1 border-button border-dashed" />
+
+                                <div className="flex items-center justify-between w-full px-4 py-2">
+                                    <button className="text-xs text-button flex items-center justify-center gap-2">
+                                        View Profile
+                                        <FaArrowRightLong className="text-button" />
+                                    </button>
                                 </div>
                             </div>
 
-                            <hr className="w-full border-b-1 border-button border-dashed" />
-
-                            <div className="flex items-center justify-between w-full px-4 py-2">
-                                <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
-                                    <FaArrowRightLong className="text-button" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className=" gap-3 flex pb-5 flex-col items-start justify-start bg-background rounded-xl shadow-md">
-                            <img
-                                src={Tutor}
-                                alt="tutor"
-                                className="rounded-xl p-1 mt-0 object-cover "
-                            />
-                            <h1 className="text-lg font-poppins  px-5 ">
-                                Kebede Mamo
-                            </h1>
-                            <div className="flex   items-center w-full justify-between px-4 md:gap-16">
-                                <div className="flex items-center justify-center gap-2">
-                                    <LuGraduationCap className="text-button" />
-                                    <p className="text-xs">
-                                        Mekelle University
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <FaStar className="text-yellow-500" />
-                                    <p className="text-xs  text-button">4.5</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-end w-full gap-2 px-4">
-                                <div className="border px-2 py-1 rounded-lg flex items-center justify-center gap-1">
-                                    <FaLocationDot
-                                        className="text-button"
-                                        style={{ fontSize: "12px" }}
-                                    />
-                                    <p className="text-xs text-gray-500">
-                                        Addis Ababa
-                                    </p>
-                                </div>
-                            </div>
-
-                            <hr className="w-full border-b-1 border-button border-dashed" />
-
-                            <div className="flex items-center justify-between w-full px-4 py-2">
-                                <button className="text-xs text-button flex items-center justify-center gap-2">
-                                    View Profile
-                                    <FaArrowRightLong className="text-button" />
-                                </button>
-                            </div>
-                        </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
