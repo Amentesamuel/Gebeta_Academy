@@ -7,9 +7,9 @@ import MissionAndVision from "@/Components/AboutUsPage/MissionAndVision";
 import WhyUs from "@/Components/AboutUsPage/WhyUs";
 import FooterBanner from "@/Components/Landingpage/FooterBanner";
 
-const About = () => {
+const About = ({user}) => {
     return (
-        <Mainlayout>
+        <Mainlayout user={user}>
             <Banner>
                 <div className="flex flex-col items-center text-5xl text-button font-sourGummy justify-center">
                     About Us

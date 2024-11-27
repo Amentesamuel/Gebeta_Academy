@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resource;
+use App\Models\Student;
 use App\Models\Tutor;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -22,7 +23,10 @@ class HomeController extends Controller
     }
     public function Dashboard(){
         $user = Auth::user();
-        return Inertia::render('Student/Dashboard',['user'=> $user]);
+       
+       
+        $student=Student::where('user_id',$user->id)->first();
+        return Inertia::render('Student/Dashboard',['user'=> $user,'student'=>$student]);
     }
 
     public function index() {
@@ -31,6 +35,7 @@ class HomeController extends Controller
         return Inertia::render('LandingPage',['tutors'=>$tutors,'user'=>$user]);
     }
     public function HowTo(){
-        return Inertia::render('HowTo');
+        $user=Auth::user();
+        return Inertia::render('HowTo',['user'=> $user]);
     }
 }

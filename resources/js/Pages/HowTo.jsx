@@ -4,9 +4,9 @@ import Banner from '@/Layouts/Banner'
 import Mainlayout from '@/Layouts/Mainlayout'
 import React from 'react'
 
-const HowTo = () => {
+const HowTo = ({user}) => {
   return (
-    <Mainlayout>
+    <Mainlayout user={user}>
         <Banner>
         <h1 className='flex flex-col items-center text-5xl text-button font-sourGummy justify-center'>How To</h1>
 

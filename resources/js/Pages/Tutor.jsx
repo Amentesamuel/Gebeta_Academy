@@ -3,10 +3,10 @@ import Banner from '@/Layouts/Banner'
 import Mainlayout from '@/Layouts/Mainlayout'
 import React from 'react'
 
-const Tutor = ({tutors}) => {
+const Tutor = ({tutors,user}) => {
   
   return (
-    <Mainlayout>
+    <Mainlayout user={user}>
         <Banner>
         <div className="flex flex-col items-center text-5xl text-button font-sourGummy justify-center">
                     Our Tutors

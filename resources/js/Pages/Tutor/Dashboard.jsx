@@ -28,6 +28,7 @@ ChartJS.register(
 );
 
 const Dashboard = ({ children }) => {
+    
     // Sample data for charts
     const lineChartData = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
@@ -71,6 +72,7 @@ const Dashboard = ({ children }) => {
             </div>
             <div className='flex-1 overflow-auto p-8'>
                 {children}
+                
             </div>
         </div>
         </Mainlayout>

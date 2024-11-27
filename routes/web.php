@@ -5,6 +5,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RateController;
+use App\Http\Controllers\ReserveTutorController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\TutorController;
 use Illuminate\Foundation\Application;
@@ -29,14 +31,27 @@ Route::get('/blog/{id}',[BlogController::class, 'singleBlog'])->name('blog');
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/Auth', [HomeController::class, 'Authenticated'])->name('Auth');
-    Route::get('/Userdashboard', [HomeController::class, 'Dashboard'])->name('Userdashboard');
-    Route::get('/Tutordashboard',[TutorController::class,'Dashboard'])->name('TutorDashboard');
-    Route::get('/Tutordashboard/profile',[TutorController::class,'profile'])->name('profile');
-    Route::get('/Tutordashboard/apply',[TutorController::class,'apply'])->name('apply');
-    Route::Post('/Tutordashboard/apply',[TutorController::class,'store'])->name('store');
+    Route::middleware('checkRole:student')->group(function () {
 
-    Route::get('/Tutordashboard/edit',[TutorController::class,'edit'])->name('edit.cv');
+        Route::get('/Auth', [HomeController::class, 'Authenticated'])->name('Auth');
+        Route::get('/Userdashboard', [HomeController::class, 'Dashboard'])->name('Userdashboard');
+    
+        Route::Post('/Rate/{id}',[RateController::class,'store'])->name('rate');
+        Route::Post('/Reserve/{id}',[ReserveTutorController::class,'reserve'])->name('reserve');
+    });
+    
+
+    
+});
+
+Route::middleware('auth',)->group(function(){
+    Route::middleware('checkRole:tutor')->group(function () {
+            Route::get('/Tutordashboard/edit',[TutorController::class,'edit'])->name('edit.cv');
+            Route::get('/Tutordashboard',[TutorController::class,'Dashboard'])->name('TutorDashboard');
+            Route::get('/Tutordashboard/profile',[TutorController::class,'profile'])->name('profile');
+            Route::get('/Tutordashboard/apply',[TutorController::class,'apply'])->name('apply');
+            Route::Post('/Tutordashboard/apply',[TutorController::class,'store'])->name('store');
+        });
     
 });
 

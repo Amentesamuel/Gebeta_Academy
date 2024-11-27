@@ -61,16 +61,11 @@ class TutorResource extends Resource
                 RichEditor::make('description')->required()->label('Description'),
                 Toggle::make('status')->required()->label('Status'),
 
+                
+
             ]);
-    }
-    protected function mutateFormDataBeforeCreate(array $data): array
-    {
-        if (empty($data['user_id'])) {
-            $data['user_id'] = User::where('email', 'default@domain.com')->first()->id ?? null; // Assign default user
         }
-    
-        return $data;
-    }
+       
 
     public static function table(Table $table): Table
     {

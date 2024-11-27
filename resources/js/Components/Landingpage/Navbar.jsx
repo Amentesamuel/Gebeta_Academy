@@ -97,7 +97,7 @@ const Navbar = ({ user }) => {
                 {user ? (
                     url.includes("dashboard") ? (
                         <div className="border hidden lg:flex border-gray-300 bg-button hover:bg-button/80 hover:scale-105 transition-all duration-300 text-white rounded-xl px-12 py-1">
-                            <Link href="/logout">Logout</Link>
+                            <button type="submit" onClick={handleLogout}>Logout</button>
                         </div>
                     ) : user.role === "tutor" ? (
                         <div className="border hidden lg:flex border-gray-300 bg-button hover:bg-button/80 hover:scale-105 transition-all duration-300 text-white rounded-xl px-12 py-1">

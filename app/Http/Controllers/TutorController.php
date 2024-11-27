@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rate;
 use Carbon\Carbon;
 use App\Models\User;
 use Inertia\Inertia;
@@ -15,12 +16,21 @@ class TutorController extends Controller
 {
     //
     public function index(){
+        $user = Auth::user();
+        // $tutor=Tutor::where("user_id", $user->id)->first();
       
-        return Inertia::render('Tutor',['tutors'=>Tutor::where('status',1)->get()]);
+        return Inertia::render('Tutor',['tutors'=>Tutor::where('status',1)->get(),'user'=>$user]);
     }
     public function singleTutor($id){
+        
         $tutor = Tutor::find($id);
-        return Inertia::render('detailPage',['tutor'=>$tutor]);
+        $user=User::where('id', $tutor->user_id)->first();
+       
+        $avarageRate=Rate::where('tutor_id',$tutor->id)->avg('rate');
+        $rate = number_format($avarageRate ?? 0, 2);
+       
+        
+        return Inertia::render('TutorDetail',['tutor'=>$tutor,'user'=>$user,'rate'=>$rate]);
     }
     public function store(Request $request){
         dd($request->all());
@@ -76,14 +86,19 @@ class TutorController extends Controller
         return Inertia::render('Tutor/Dashboard');
     }
     public function profile(){
+       
         $user=Auth::user();
-        return Inertia::render('Tutor/Profile',['user'=>$user]);
+        $tutor=Tutor::where('user_id', $user->id)->first();
+        
+        return Inertia::render('Tutor/Profile',['user'=>$user,'tutor'=> $tutor]);
     }
     public function apply(){
         $user=Auth::user();
         return Inertia::render('Tutor/Apply',['user'=>$user]);
     }
     public function edit(){
-        return Inertia::render('Tutor/EditCV');
+        $user=Auth::user();
+        $tutor=Tutor::where('user_id', $user->id)->first();
+        return Inertia::render('Tutor/EditCV',['user'=>$user,'tutor'=> $tutor]);
     }
 }
