@@ -14,24 +14,19 @@ class checkRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
-        
-        
-        if(!empty(Auth::user())){
-       
-            
-            if(Auth::user()->role) {
-               
-            return $next($request);
-            }else{
-                return "role is required";
-            }
-            
-        }else{
-            return $next($request);
+        // Ensure the user is authenticated
+        $user = Auth::user();
+        if (!$user) {
+            return response()->json(['message' => 'Unauthorized. User not logged in.'], 401);
         }
 
-       
+        // Ensure the user's role matches the required role
+        if ($user->role !== $role) {
+            return response()->json(['message' => 'Forbidden. Insufficient permissions.'], 403);
+        }
+
+        return $next($request);
     }
 }

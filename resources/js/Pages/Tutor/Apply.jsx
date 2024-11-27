@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 import { useForm } from "@inertiajs/react";
 import Select from "react-select";
 
-const Apply = ({user}) => {
+const Apply = ({user,tutor}) => {
     const { data, setData, post, errors, processing } = useForm({
         name: "",
         email: "",

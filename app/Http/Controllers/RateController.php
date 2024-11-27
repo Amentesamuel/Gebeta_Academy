@@ -21,4 +21,6 @@ class RateController extends Controller
         ]);
         return redirect()->back()->with('success','Rated'); 
     }
+
+    
 }
