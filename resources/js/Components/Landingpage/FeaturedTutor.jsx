@@ -23,7 +23,7 @@ const FeaturedTutor = ({tutors}) => {
                     </h1>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 w-full px-10 md:px-0 md:w-auto md:grid-cols-3 gap-5">
                     {tutors.data.map((tutor, i) => (
                         <Link href={`/tutor/${tutor.id}`} >
                             <div

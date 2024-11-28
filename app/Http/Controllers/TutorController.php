@@ -18,6 +18,7 @@ class TutorController extends Controller
     public function index(){
         $user = Auth::user();
         // $tutor=Tutor::where("user_id", $user->id)->first();
+       
       
         return Inertia::render('Tutor',['tutors'=>Tutor::where('status',1)->get(),'user'=>$user]);
     }

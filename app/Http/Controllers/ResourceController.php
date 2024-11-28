@@ -17,8 +17,9 @@ class ResourceController extends Controller
         return Inertia::render('ResourcePage',['resources'=>$resources,'user'=>$user]);
     }
     public function singleResource($id){
+        $user=Auth::user();
         
         $resource=Resource::find($id);
-        return Inertia::render('BookDetail',['resources'=>$resource]);
+        return Inertia::render('BookDetail',['resources'=>$resource,'user'=>$user]);
     }
 }

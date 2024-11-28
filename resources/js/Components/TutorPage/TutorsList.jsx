@@ -448,7 +448,7 @@ const TutorsList = ({ tutors }) => {
                             )}
                         </div> */}
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:px-0 px-10 w-full md:w-auto md:grid-cols-3 gap-5">
                         {tutors.map((tutor, i) => (
                             <Link href={`/tutor/${tutor.id}`}>
                                 <div

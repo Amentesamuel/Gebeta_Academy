@@ -29,13 +29,16 @@ class ResourceResource extends Resource
         return $form
             ->schema([
                 //
-                TextInput::make('title')->name('title'),
-                TextInput::make('slug')->name('slug'),
-                RichEditor::make('description')->name('description'),
-                FileUpload::make('book_cover')->required()->directory('Resource')->disk('public')->label('Image'),
-                TextInput::make('author')->name('Author'),
-                FileUpload::make('file')->required()->directory('Resource')->disk('public')->label('File'),
-
+                TextInput::make('title')->name('title')->required(true),
+                TextInput::make('slug')->name('slug')->required(true),
+                RichEditor::make('description')->name('description')->required(true),
+                FileUpload::make('book_cover')->directory('Resource')->disk('public')->label('Image'),
+                TextInput::make('author')->name('Author')->required(true),
+                FileUpload::make('file')->directory('Resource')->disk('public')->label('File'),
+                TextInput::make('link')
+                
+                ->label('YouTube Link')
+                ->url(),
             ]);
     }
 

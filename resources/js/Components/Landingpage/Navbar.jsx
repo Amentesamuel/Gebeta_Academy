@@ -36,19 +36,19 @@ const Navbar = ({ user }) => {
                             <Link href={"/"}>Home</Link>
                         </li>
                         <li className=" border-b-2 border-transparent  text-sm hover:border-button transition-colors duration-300 ">
-                            <Link href={"about"}>About</Link>
+                            <Link href={"/about"}>About</Link>
                         </li>
                         <li className="border-b-2 border-transparent  text-sm hover:border-button transition-colors duration-300">
-                            <Link href={"tutor"}>Tutors</Link>
+                            <Link href={"/tutor"}>Tutors</Link>
                         </li>
                         <li className=" border-b-2 border-transparent  text-sm hover:border-button transition-colors duration-300 ">
                             <Link href={"/how-to"}>How To</Link>
                         </li>
                         <li className="border-b-2 border-transparent text-sm hover:border-button transition-colors duration-300">
-                            <Link href={"resource"}>Resources</Link>
+                            <Link href={"/resource"}>Resources</Link>
                         </li>
                         <li className="border-b-2 border-transparent text-sm hover:border-button transition-colors duration-300">
-                            <Link href={"blog"}>Blog</Link>
+                            <Link href={"/blog"}>Blog</Link>
                         </li>
                     </ul>
                 </div>
@@ -66,19 +66,19 @@ const Navbar = ({ user }) => {
                                 <Link href={"/"}>Home</Link>
                             </li>
                             <li className=" border-b-2 border-transparent hover:border-button transition-colors duration-300 ">
-                                <Link href={"about"}>About</Link>
+                                <Link href={"/about"}>About</Link>
                             </li>
                             <li className="border-b-2 border-transparent hover:border-button transition-colors duration-300">
-                                <Link href={"tutor"}>Tutors</Link>
+                                <Link href={"/tutor"}>Tutors</Link>
                             </li>
                             <li className=" border-b-2 border-transparent  text-sm hover:border-button transition-colors duration-300 ">
                                 <Link href={"/how-to"}>How To</Link>
                             </li>
                             <li className="border-b-2 border-transparent hover:border-button transition-colors duration-300">
-                                <Link href={"resource"}>Resources</Link>
+                                <Link href={"/resource"}>Resources</Link>
                             </li>
                             <li className="border-b-2 border-transparent hover:border-button transition-colors duration-300">
-                                <Link href={"blog"}>Blog</Link>
+                                <Link href={"/blog"}>Blog</Link>
                             </li>
                         </ul>
                         {user ? (

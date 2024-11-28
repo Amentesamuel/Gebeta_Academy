@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        app('router')->aliasMiddleware('checkrole', checkRole::class);
+        // app('router')->aliasMiddleware('checkrole', checkRole::class);
         Vite::prefetch(concurrency: 3);
 
         

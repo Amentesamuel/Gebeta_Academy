@@ -102,7 +102,7 @@ const EditCV = ({tutor,user}) => {
                                 Gender
                             </label>
                             <select
-                                value={data.gender}
+                                value={tutor.gender}
                                 onChange={(e) =>
                                     setData("gender", e.target.value)
                                 }
@@ -128,7 +128,7 @@ const EditCV = ({tutor,user}) => {
                             </label>
                             <input
                                 type="text"
-                                value={data.phone}
+                                value={tutor.phone}
                                 onChange={(e) =>
                                     setData("phone", e.target.value)
                                 }
@@ -148,7 +148,7 @@ const EditCV = ({tutor,user}) => {
                             </label>
                             <input
                                 type="text"
-                                value={data.address}
+                                value={tutor.address}
                                 onChange={(e) =>
                                     setData("address", e.target.value)
                                 }
@@ -169,7 +169,7 @@ const EditCV = ({tutor,user}) => {
                             <select
                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                 name=""
-                                value={data.education}
+                                value={tutor.education}
                                 onChange={(e) =>
                                     setData("education", e.target.value)
                                 }
@@ -197,7 +197,7 @@ const EditCV = ({tutor,user}) => {
                             <select
                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                 name=""
-                                value={data.subject}
+                                value={tutor.subject}
                                 onChange={(e) =>
                                     setData("subject", e.target.value)
                                 }
@@ -244,7 +244,7 @@ const EditCV = ({tutor,user}) => {
                             </label>
                             <input
                                 type="text"
-                                value={data.experience}
+                                value={tutor.experience}
                                 onChange={(e) =>
                                     setData("experience", e.target.value)
                                 }
@@ -282,7 +282,7 @@ const EditCV = ({tutor,user}) => {
                             </label>
                             <textarea
                                 type="text"
-                                value={data.description}
+                                value={tutor.description}
                                 onChange={(e) =>
                                     setData("description", e.target.value)
                                 }

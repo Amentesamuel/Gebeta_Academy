@@ -12,6 +12,7 @@ use App\Http\Controllers\TutorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ReserveTutorController;
 
 
@@ -38,6 +39,7 @@ Route::middleware('auth')->group(function () {
     
         Route::Post('/Rate/{id}',[RateController::class,'store'])->name('rate');
         Route::Post('/Reserve/{id}',[ReserveTutorController::class,'reserve'])->name('reserve');
+        
     });
     
 

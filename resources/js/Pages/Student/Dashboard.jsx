@@ -33,9 +33,9 @@ const Dashboard = ({user,student}) => {
                             <h1 className="text-3xl font-bold text-gray-800">{user.name}</h1>
                             {/* <p className="text-gray-600 mt-3">Mathematics Tutor</p> */}
                         </div>
-                        <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+                        {/* <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
                             Edit Profile
-                        </button>
+                        </button> */}
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

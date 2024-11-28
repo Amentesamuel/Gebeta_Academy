@@ -11,6 +11,7 @@ class Resource extends Model
         'title',
         'slug',
         'book_cover',
+        'link',
         'author',
         'description',
         'file',
