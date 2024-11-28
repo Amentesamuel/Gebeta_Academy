@@ -31,39 +31,70 @@ class TutorResource extends Resource
 
     public static function form(Form $form): Form
     {
+        
         return $form
-            ->schema([
-                //
-                TextInput::make('user.name')->required()->label('Name')->default(fn ($record) => $record?->user?->name),
-                Select::make('gender')->options([
+        ->schema([
+            TextInput::make('user.name')
+                ->required()
+                ->label('Name'),
+            TextInput::make('user.email')
+                ->required()
+                ->email()
+                ->label('Email'),
+            Select::make('gender')
+                ->options([
                     'male' => 'Male',
                     'female' => 'Female',
-                ])->label('Gender')->required(),
-                TextInput::make('phone')->required()->label('Phone'),
-                TextInput::make('user.email')->required()->label('Email'),
-                TextInput::make('address')->required()->label('Address'),
-                Select::make('education')->options([
+                ])
+                ->label('Gender')
+                ->required(),
+            TextInput::make('phone')
+                ->required()
+                ->label('Phone'),
+            TextInput::make('address')
+                ->required()
+                ->label('Address'),
+            Select::make('education')
+                ->options([
                     'Bachelor' => 'Bachelor',
                     'Master' => 'Master',
                     'PhD' => 'PhD',
-                ])->required()->label('Education'),
-                TextInput::make('subject')->required()->label('Subject'),
-                FileUpload::make('image')->required()->directory('Tutors')->disk('public')->label('Image'),
-                Select::make('available_days')->options([
+                ])
+                ->required()
+                ->label('Education'),
+            TextInput::make('subject')
+                ->required()
+                ->label('Subject'),
+            FileUpload::make('image')
+                ->required()
+                ->directory('Tutors')
+                ->disk('public')
+                ->label('Image'),
+            Select::make('available_days')
+                ->options([
                     'Monday' => 'Monday',
                     'Tuesday' => 'Tuesday',
                     'Wednesday' => 'Wednesday',
                     'Thursday' => 'Thursday',
                     'Friday' => 'Friday',
-                ])->multiple()->reactive()->label('Available Days'),
-                TextInput::make('experience')->required()->label('Experience'),
-                TextInput::make('slug')->required()->label('Slug'),
-                RichEditor::make('description')->required()->label('Description'),
-                Toggle::make('status')->required()->label('Status'),
-
-                
-
-            ]);
+                ])
+                ->multiple()
+                ->reactive()
+                ->label('Available Days'),
+            TextInput::make('experience')
+                ->required()
+                ->label('Experience'),
+            TextInput::make('slug')
+                ->required()
+                ->label('Slug'),
+            RichEditor::make('description')
+                ->required()
+                ->label('Description'),
+            Toggle::make('status')
+                ->required()
+                ->label('Status'),
+        ]);
+    
         }
        
 

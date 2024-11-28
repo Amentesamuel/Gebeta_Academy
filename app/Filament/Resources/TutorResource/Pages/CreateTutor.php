@@ -14,9 +14,19 @@ class CreateTutor extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        if (empty($data['user_id'])) {
-            $data['user_id'] = User::where('email', 'default@domain.com')->first()->id ?? null; // Assign default user
-        }
+        $user = User::create([
+            'name' => $data['user']['name'],
+            'email' => $data['user']['email'],
+            // 'password' => bcrypt($data['user']['password']),
+            'password' => bcrypt('password'), // Placeholder password
+            'role' => 'tutor', // Placeholder role for tutors
+        ]);
+    
+        // Assign the user ID to the tutor's user_id field
+        $data['user_id'] = $user->id;
+    
+        // Remove the nested 'user' key from $data to prevent errors
+        unset($data['user']);
     
         return $data;
     }
